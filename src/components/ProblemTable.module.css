@@ -1,0 +1,220 @@
+.header {
+  margin-bottom: 28px;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.desc {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+.progressRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.progBar {
+  width: 200px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progFill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.4s;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--muted);
+  font-family: "Syne", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filterBtn:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+.activeAll {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+.activeEasy {
+  border-color: var(--easy);
+  color: var(--easy);
+}
+
+.activeMedium {
+  border-color: var(--medium);
+  color: var(--medium);
+}
+
+.activeHard {
+  border-color: var(--hard);
+  color: var(--hard);
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+}
+
+.row {
+  border-bottom: 1px solid rgba(30, 30, 46, 0.6);
+  transition: background 0.12s;
+  cursor: pointer;
+}
+
+.row:hover {
+  background: var(--surface);
+}
+
+.row td {
+  padding: 12px;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.doneRow .nameCell a {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.checkCell {
+  width: 40px;
+  text-align: center;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: transparent;
+  transition: all 0.15s;
+}
+
+.checked {
+  background: var(--easy);
+  border-color: var(--easy);
+  color: #000;
+}
+
+.numCell {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: var(--muted);
+  width: 60px;
+}
+
+.nameCell a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.12s;
+}
+
+.nameCell a:hover {
+  color: var(--accent-blue);
+}
+
+.diffCell {
+  width: 90px;
+}
+
+.diffTag {
+  font-size: 11px;
+  font-weight: 700;
+  font-family: "JetBrains Mono", monospace;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.easy {
+  color: var(--easy);
+  background: rgba(61, 220, 132, 0.08);
+}
+
+.medium {
+  color: var(--medium);
+  background: rgba(255, 159, 67, 0.08);
+}
+
+.hard {
+  color: var(--hard);
+  background: rgba(248, 113, 113, 0.08);
+}
+
+.tagCell {
+  width: 220px;
+}
+
+.chip {
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  display: inline-block;
+  margin: 1px 2px;
+  font-family: "JetBrains Mono", monospace;
+}
