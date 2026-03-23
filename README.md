@@ -1,61 +1,40 @@
-# 🌸 LeetCode Top 100 — Study Tracker
+# 🌸 LeetCode Top 100 Tracker
 
-A clean & cute React app to track your progress through the LeetCode Top 100 Hot problems, organized by category. Light pastel vibes, zero stress.
+LeetCode's Top 100 Liked Problems is one of the best lists for interview prep — but there's no built-in tracker, no categories, and no way to see your progress. This tool fixes that.
 
-![problems](https://img.shields.io/badge/problems-100-c084fc?style=flat-square) ![React](https://img.shields.io/badge/React-18-818cf8?style=flat-square) ![Vite](https://img.shields.io/badge/Vite-5-f9a8d4?style=flat-square)
+**Live demo → [lc-tracker.vercel.app](https://lc-tracker.vercel.app)** *(update with your link)*
 
-## ✨ Features
+---
 
-- **14 categories** — Array/Hashing, Two Pointers, Sliding Window, Stack, Binary Search, Linked List, Trees, Tries, Heap, Backtracking, Graphs, 1D DP, 2D DP, Greedy & Intervals, Math & Bits
-- **Progress tracking** — persisted in `localStorage`, survives page refresh
-- **Difficulty filters** — filter by Easy / Medium / Hard within each category
-- **Direct LeetCode links** — click any problem title to open it on LeetCode
-- **Global progress bar** — see your overall completion at a glance
+## What it does
 
-## 🚀 Getting Started
+- Splits all 100 problems into **14 categories** (Arrays, Trees, DP, Graphs, etc.) so you can study by topic instead of randomly
+- Lets you **check off problems** as you solve them — progress is saved automatically
+- Shows your **overall completion** and per-category progress at a glance
+- Links directly to each problem on LeetCode so you never leave the page hunting for it
+
+## How to use
+
+Just open the app, pick a category, and start checking things off. That's it — no account, no setup, no login.
+
+---
+
+## Run it yourself
 
 ```bash
+git clone https://github.com/your-username/lc-tracker
+cd lc-tracker
 npm install
 npm run dev
 ```
 
+<<<<<<< HEAD
 Then open https://top-100-leetcode-tracker.vercel.app/
 ## 🌐 Deploy to GitHub Pages
+=======
+Then open [http://localhost:5173](http://localhost:5173).
 
-```bash
-npm run build
-# push the dist/ folder, or use gh-pages:
-npx gh-pages -d dist
-```
+---
+>>>>>>> 0a9dcb8 (update readme)
 
-Add `base: '/your-repo-name/'` to `vite.config.js` if deploying to a subdirectory.
-
-## 📁 Project Structure
-
-```
-src/
-├── data/
-│   └── problems.js        # All 100 problems with categories, difficulty, tags
-├── hooks/
-│   └── useProgress.js     # localStorage persistence hook
-├── components/
-│   ├── Header.jsx          # Top bar with global stats
-│   ├── Sidebar.jsx         # Category navigation
-│   ├── CategoryGrid.jsx    # Overview card grid
-│   └── ProblemTable.jsx    # Per-category problem list
-├── App.jsx
-├── App.css                 # Global styles + CSS variables
-└── main.jsx
-```
-
-## 🎨 Customizing
-
-To add or remove problems, edit `src/data/problems.js`. Each problem needs:
-
-```js
-{ num: 1, title: "Two Sum", diff: "Easy", tags: ["hash map"] }
-```
-
-## 📚 Recommended Study Order
-
-Array/Hashing → Two Pointers → Sliding Window → Stack → Binary Search → Linked List → Trees → Backtracking → Graphs → Heap → 1D DP → 2D DP → Greedy → Tries → Math & Bits
+Made with 💜 because LeetCode really should have built this already.
