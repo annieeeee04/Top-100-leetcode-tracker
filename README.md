@@ -28,13 +28,4 @@ npm install
 npm run dev
 ```
 
-<<<<<<< HEAD
-Then open https://top-100-leetcode-tracker.vercel.app/
-## 🌐 Deploy to GitHub Pages
-=======
-Then open [http://localhost:5173](http://localhost:5173).
 
----
->>>>>>> 0a9dcb8 (update readme)
-
-Made with 💜 because LeetCode really should have built this already.
