@@ -2,7 +2,7 @@
 
 LeetCode's Top 100 Liked Problems is one of the best lists for interview prep — but there's no built-in tracker, no categories, and no way to see your progress. This tool fixes that.
 
-**Live demo → [lc-tracker.vercel.app](https://top-100-leetcode-tracker.vercel.app/)** 
+**Live demo → [lc-tracker](https://top-100-leetcode-tracker.vercel.app/)** 
 
 ---
 
