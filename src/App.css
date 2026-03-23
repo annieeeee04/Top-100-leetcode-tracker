@@ -1,16 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Nunito:wght@400;600;700;800;900&display=swap");
 
 :root {
-  --bg: #0a0a0f;
-  --surface: #12121a;
-  --border: #1e1e2e;
-  --accent-blue: #4f9eff;
-  --accent-purple: #a78bfa;
-  --text: #e2e8f0;
-  --muted: #64748b;
-  --easy: #3ddc84;
-  --medium: #ff9f43;
-  --hard: #f87171;
+  --bg: #f5f0ff;
+  --surface: #ffffff;
+  --border: #e5d9fb;
+  --shadow: 0 2px 12px rgba(139, 92, 246, 0.08);
+  --shadow-hover: 0 6px 24px rgba(139, 92, 246, 0.16);
+  --accent: #7c3aed;
+  --accent-soft: #ddd6fe;
+  --accent-pink: #ec4899;
+  --accent-pink-soft: #fce7f3;
+  --text: #2e1065;
+  --muted: #9b85c4;
+  --easy: #059669;
+  --easy-bg: #d1fae5;
+  --medium: #d97706;
+  --medium-bg: #fef3c7;
+  --hard: #dc2626;
+  --hard-bg: #fee2e2;
 }
 
 *,
@@ -22,7 +29,7 @@
 }
 
 body {
-  font-family: "Syne", sans-serif;
+  font-family: "Nunito", sans-serif;
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
