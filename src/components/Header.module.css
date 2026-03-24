@@ -1,32 +1,61 @@
 .header {
-  padding: 18px 40px;
+  padding: 14px 24px;
   background: var(--surface);
-  border-bottom: 2px solid var(--border);
+  border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 16px;
-  box-shadow: var(--shadow);
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 8px;
+  flex-shrink: 0;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  background: var(--text-secondary);
+  border-radius: 2px;
+  transition: all 0.2s;
 }
 
 .logo {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 900;
   letter-spacing: -0.3px;
-  color: var(--accent);
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  color: var(--text);
 }
 
 .accent {
-  color: var(--accent-pink);
+  color: var(--accent);
 }
 
 .stats {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
@@ -35,19 +64,61 @@
   font-size: 12px;
   padding: 6px 14px;
   border-radius: 20px;
-  border: 1.5px solid var(--border);
-  background: var(--bg);
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.diffPill {
+  gap: 10px;
+}
+
+.pillLabel {
+  color: var(--muted);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pillMuted {
   color: var(--muted);
 }
 
 .barWrap {
-  height: 5px;
-  background: var(--border);
+  height: 6px;
+  background: var(--surface2);
+  position: relative;
+  overflow: visible;
 }
 
 .barFill {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent), var(--accent-pink));
+  background: linear-gradient(90deg, #7c3aed, var(--accent));
   border-radius: 0 4px 4px 0;
-  transition: width 0.4s ease;
+  transition: width 0.5s ease;
+  position: relative;
+}
+
+.barLabel {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  font-family: "JetBrains Mono", monospace;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .diffPill {
+    display: none;
+  }
 }

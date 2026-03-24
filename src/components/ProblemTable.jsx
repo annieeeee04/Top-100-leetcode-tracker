@@ -20,12 +20,12 @@ export default function ProblemTable({ category, done, onToggle }) {
       {/* Header */}
       <div className={styles.header}>
         <h1 className={styles.title}>
-          <span style={{ color: category.color }}>{category.icon}</span>{" "}
+          <span className={styles.mascot}>{category.mascot}</span>
           {category.name}
           <span
             className={styles.badge}
             style={{
-              background: `${category.color}22`,
+              background: `${category.color}25`,
               color: category.color,
             }}
           >
@@ -40,7 +40,7 @@ export default function ProblemTable({ category, done, onToggle }) {
               style={{ width: `${pct}%`, background: category.color }}
             />
           </div>
-          <span className={styles.progLabel}>{pct}% complete</span>
+          <span>{pct}% complete</span>
         </div>
       </div>
 
@@ -57,59 +57,61 @@ export default function ProblemTable({ category, done, onToggle }) {
         ))}
       </div>
 
-      {/* Table */}
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <th />
-            <th>#</th>
-            <th>Problem</th>
-            <th>Diff</th>
-            <th>Key Concepts</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filtered.map((problem) => {
-            const isDone = done.has(problem.num);
-            return (
-              <tr
-                key={problem.num}
-                className={`${styles.row} ${isDone ? styles.doneRow : ""}`}
-                onClick={() => onToggle(problem.num)}
-              >
-                <td className={styles.checkCell}>
-                  <span className={`${styles.checkbox} ${isDone ? styles.checked : ""}`}>
-                    ✓
-                  </span>
-                </td>
-                <td className={styles.numCell}>#{problem.num}</td>
-                <td className={styles.nameCell}>
-                  <a
-                    href={`https://leetcode.com/problems/${slugify(problem.title)}/`}
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    {problem.title}
-                  </a>
-                </td>
-                <td className={styles.diffCell}>
-                  <span className={`${styles.diffTag} ${styles[problem.diff.toLowerCase()]}`}>
-                    {problem.diff}
-                  </span>
-                </td>
-                <td className={styles.tagCell}>
-                  {problem.tags.map((tag) => (
-                    <span key={tag} className={styles.chip}>
-                      {tag}
+      {/* Table wrapped for mobile scroll */}
+      <div className={styles.tableWrap}>
+        <table className={styles.table}>
+          <thead>
+            <tr>
+              <th />
+              <th>#</th>
+              <th>Problem</th>
+              <th>Diff</th>
+              <th className={styles.tagCell}>Key Concepts</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filtered.map((problem) => {
+              const isDone = done.has(problem.num);
+              return (
+                <tr
+                  key={problem.num}
+                  className={`${styles.row} ${isDone ? styles.doneRow : ""}`}
+                  onClick={() => onToggle(problem.num)}
+                >
+                  <td className={styles.checkCell}>
+                    <span className={`${styles.checkbox} ${isDone ? styles.checked : ""}`}>
+                      ✓
                     </span>
-                  ))}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+                  </td>
+                  <td className={styles.numCell}>#{problem.num}</td>
+                  <td className={styles.nameCell}>
+                    <a
+                      href={`https://leetcode.com/problems/${slugify(problem.title)}/`}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {problem.title}
+                    </a>
+                  </td>
+                  <td className={styles.diffCell}>
+                    <span className={`${styles.diffTag} ${styles[problem.diff.toLowerCase()]}`}>
+                      {problem.diff}
+                    </span>
+                  </td>
+                  <td className={styles.tagCell}>
+                    {problem.tags.map((tag) => (
+                      <span key={tag} className={styles.chip}>
+                        {tag}
+                      </span>
+                    ))}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

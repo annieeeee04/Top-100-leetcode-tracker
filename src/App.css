@@ -1,23 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Nunito:wght@400;600;700;800;900&display=swap");
 
 :root {
-  --bg: #f5f0ff;
-  --surface: #ffffff;
-  --border: #e5d9fb;
-  --shadow: 0 2px 12px rgba(139, 92, 246, 0.08);
-  --shadow-hover: 0 6px 24px rgba(139, 92, 246, 0.16);
-  --accent: #7c3aed;
-  --accent-soft: #ddd6fe;
-  --accent-pink: #ec4899;
-  --accent-pink-soft: #fce7f3;
-  --text: #2e1065;
-  --muted: #9b85c4;
-  --easy: #059669;
-  --easy-bg: #d1fae5;
-  --medium: #d97706;
-  --medium-bg: #fef3c7;
-  --hard: #dc2626;
-  --hard-bg: #fee2e2;
+  --bg: #0e0728;
+  --surface: #1a0f3d;
+  --surface2: #251654;
+  --border: #3b2480;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.6);
+  --glow: 0 0 20px rgba(167, 139, 250, 0.2);
+  --accent: #f97316;
+  --accent-green: #22c55e;
+  --accent-purple: #a78bfa;
+  --text: #f0e8ff;
+  --text-secondary: #c4b5fd;
+  --muted: #7c5cbf;
+  --easy: #22c55e;
+  --easy-bg: rgba(34, 197, 94, 0.15);
+  --medium: #f97316;
+  --medium-bg: rgba(249, 115, 22, 0.15);
+  --hard: #f43f5e;
+  --hard-bg: rgba(244, 63, 94, 0.15);
 }
 
 *,
@@ -51,12 +53,22 @@ body {
   min-width: 0;
 }
 
+/* Mobile overlay backdrop */
+.sidebarOverlay {
+  display: none;
+}
+
 @media (max-width: 768px) {
-  .layout {
-    flex-direction: column;
+  .main {
+    padding: 20px 16px;
   }
 
-  .main {
-    padding: 20px;
+  .sidebarOverlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 40;
+    backdrop-filter: blur(2px);
   }
 }

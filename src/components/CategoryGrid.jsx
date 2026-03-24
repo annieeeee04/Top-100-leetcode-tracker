@@ -5,10 +5,9 @@ export default function CategoryGrid({ done, onSelect }) {
   return (
     <div>
       <div className={styles.header}>
-        <h1 className={styles.title}>📋 All Categories</h1>
+        <h1 className={styles.title}>All Categories</h1>
         <p className={styles.desc}>
-          Click a category to drill in and track progress. Check off problems as
-          you solve them.
+          Pick a category and start grinding. Check off problems as you solve them — your progress saves automatically.
         </p>
       </div>
 
@@ -21,19 +20,20 @@ export default function CategoryGrid({ done, onSelect }) {
               key={cat.id}
               className={styles.card}
               onClick={() => onSelect(cat.id)}
+              style={{ "--cat-color": cat.color }}
             >
-              <div className={styles.cardTop}>
-                <span className={styles.cardIcon}>{cat.icon}</span>
+              <div className={styles.cardMascot}>{cat.mascot}</div>
+              <div className={styles.cardBody}>
                 <span className={styles.cardName}>{cat.name}</span>
-              </div>
-              <p className={styles.cardCount}>
-                {doneCount}/{cat.problems.length} done · {pct}%
-              </p>
-              <div className={styles.cardBar}>
-                <div
-                  className={styles.cardFill}
-                  style={{ width: `${pct}%`, background: cat.color }}
-                />
+                <p className={styles.cardCount}>
+                  {doneCount}/{cat.problems.length} done · {pct}%
+                </p>
+                <div className={styles.cardBar}>
+                  <div
+                    className={styles.cardFill}
+                    style={{ width: `${pct}%`, background: cat.color }}
+                  />
+                </div>
               </div>
             </button>
           );
