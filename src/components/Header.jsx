@@ -17,7 +17,7 @@ export default function Header({ done, onMenuToggle }) {
             <span /><span /><span />
           </button>
           <div className={styles.logo}>
-            🌸 LC Top 100 <span className={styles.accent}>Hot</span>
+            🐾 LC Top 100 <span className={styles.accent}>Hot</span>
           </div>
         </div>
         <div className={styles.stats}>

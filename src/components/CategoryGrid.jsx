@@ -1,38 +1,38 @@
 import { CATEGORIES } from "../data/problems";
 import styles from "./CategoryGrid.module.css";
 
-// Character images — matched to each category by personality & difficulty
-import loafImg        from "../pics/loaf.png";
-import mabelImg       from "../pics/Mabel.png";
-import titusImg       from "../pics/Titus.png";
-import beaverImg      from "../pics/beaver.png";
-import lizardImg      from "../pics/lizard.png";
-import collectionImg  from "../pics/collection.png";
-import wholeFamilyImg from "../pics/whole_family.png";
-import birdKingImg    from "../pics/Bird King.png";
-import goldFishImg    from "../pics/goldFish.png";
-import frogImg        from "../pics/frog.png";
-import snakeImg       from "../pics/snake.png";
-import beerImg        from "../pics/beer.png";
-import sharkImg       from "../pics/shark.png";
-import jerryImg       from "../pics/Jerry.png";
+import loafImg         from "../pics/loaf.png";
+import mabelImg        from "../pics/Mabel.png";
+import titusImg        from "../pics/Titus.png";
+import beaverImg       from "../pics/beaver.png";
+import lizardImg       from "../pics/lizard.png";
+import collectionImg   from "../pics/collection.png";
+import wholeFamilyImg  from "../pics/whole_family.png";
+import birdKingImg     from "../pics/Bird King.png";
+import goldFishImg     from "../pics/goldFish.png";
+import frogImg         from "../pics/frog.png";
+import snakeImg        from "../pics/snake.png";
+import beerImg         from "../pics/beer.png";
+import sharkImg        from "../pics/shark.png";
+import jerryImg        from "../pics/Jerry.png";
+import insectQueenImg  from "../pics/Insect Queen .png";
 
 const MASCOT_IMGS = {
-  "array-hashing":  { src: loafImg,        pos: "center 30%"  }, // cute baby beaver = starter energy
-  "two-pointers":   { src: mabelImg,        pos: "center 20%"  }, // Mabel = friendly, two hands up
-  "sliding-window": { src: titusImg,        pos: "center 40%"  }, // caterpillar slides along — perfect
-  "stack":          { src: beaverImg,       pos: "center 25%"  }, // wide-eyed builder beaver
-  "binary-search":  { src: lizardImg,       pos: "center 30%"  }, // alert lizard scanning
-  "linked-list":    { src: collectionImg,   pos: "center 40%"  }, // chain of linked critters
-  "trees":          { src: wholeFamilyImg,  pos: "20% center"  }, // beaver family around tree stump
-  "tries":          { src: birdKingImg,     pos: "center 30%"  }, // Bird King = king of all prefixes
-  "heap":           { src: goldFishImg,     pos: "center 30%"  }, // crowned fish = top priority
-  "backtracking":   { src: frogImg,         pos: "center 25%"  }, // grumpy frog jumping back
-  "graphs":         { src: snakeImg,        pos: "center 30%"  }, // tangled scary snakes = complex graph
-  "dp-1d":          { src: beerImg,         pos: "center 20%"  }, // grumpy bear = tough but doable
-  "dp-2d":          { src: sharkImg,        pos: "center 30%"  }, // terrifying shark = hardest DP
-  "greedy":         { src: jerryImg,        pos: "center 15%"  }, // smug human = always gaming the system
-  "math":           null,                                          // no character → use emoji fallback
+  "array-hashing":  { src: loafImg,          pos: "center 30%" },
+  "two-pointers":   { src: mabelImg,          pos: "center 20%" },
+  "sliding-window": { src: titusImg,          pos: "center 40%" },
+  "stack":          { src: beaverImg,         pos: "center 25%" },
+  "binary-search":  { src: lizardImg,         pos: "center 30%" },
+  "linked-list":    { src: collectionImg,     pos: "center 40%" },
+  "trees":          { src: wholeFamilyImg,    pos: "20% center" },
+  "tries":          { src: birdKingImg,       pos: "center 30%" },
+  "heap":           { src: goldFishImg,       pos: "center 30%" },
+  "backtracking":   { src: frogImg,           pos: "center 25%" },
+  "graphs":         { src: snakeImg,          pos: "center 30%" },
+  "dp-1d":          { src: beerImg,           pos: "center 20%" },
+  "dp-2d":          { src: sharkImg,          pos: "center 30%" },
+  "greedy":         { src: jerryImg,          pos: "center 15%" },
+  "math":           { src: insectQueenImg,    pos: "center 25%" },
 };
 
 export default function CategoryGrid({ done, onSelect }) {
@@ -58,8 +58,8 @@ export default function CategoryGrid({ done, onSelect }) {
               onClick={() => onSelect(cat.id)}
               style={{ "--cat-color": cat.color }}
             >
-              {/* Character image or emoji fallback */}
-              <div className={styles.cardImage}>
+              {/* Circular character portrait */}
+              <div className={styles.circleWrap} style={{ "--cat-color": cat.color }}>
                 {mascot ? (
                   <img
                     src={mascot.src}
@@ -68,7 +68,7 @@ export default function CategoryGrid({ done, onSelect }) {
                     style={{ objectPosition: mascot.pos }}
                   />
                 ) : (
-                  <div className={styles.emojiFallback}>{cat.mascot}</div>
+                  <span className={styles.emojiFallback}>{cat.mascot}</span>
                 )}
               </div>
 
@@ -76,7 +76,7 @@ export default function CategoryGrid({ done, onSelect }) {
               <div className={styles.cardBody}>
                 <span className={styles.cardName}>{cat.name}</span>
                 <p className={styles.cardCount}>
-                  {doneCount}/{cat.problems.length} done · {pct}%
+                  {doneCount}/{cat.problems.length} · {pct}%
                 </p>
                 <div className={styles.cardBar}>
                   <div

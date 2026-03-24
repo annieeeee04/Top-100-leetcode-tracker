@@ -1,7 +1,12 @@
+/* Apple Glass header */
 .header {
   padding: 14px 24px;
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.8),
+              0 2px 20px rgba(160, 100, 40, 0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,7 +15,6 @@
   position: sticky;
   top: 0;
   z-index: 30;
-  box-shadow: 0 2px 12px rgba(160, 100, 40, 0.12);
 }
 
 .left {
@@ -26,8 +30,9 @@
   gap: 5px;
   width: 36px;
   height: 36px;
-  background: var(--surface2);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   cursor: pointer;
   padding: 8px;
@@ -39,7 +44,6 @@
   height: 2px;
   background: var(--text-secondary);
   border-radius: 2px;
-  transition: all 0.2s;
 }
 
 .logo {
@@ -49,9 +53,7 @@
   color: var(--text);
 }
 
-.accent {
-  color: var(--accent);
-}
+.accent { color: var(--accent); }
 
 .stats {
   display: flex;
@@ -64,32 +66,23 @@
   font-size: 12px;
   padding: 6px 14px;
   border-radius: 20px;
-  border: 1px solid var(--border);
-  background: var(--surface2);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: var(--text-secondary);
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.diffPill {
-  gap: 10px;
-}
-
-.pillLabel {
-  color: var(--muted);
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.pillMuted {
-  color: var(--muted);
-}
+.diffPill { gap: 10px; }
+.pillLabel { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+.pillMuted { color: var(--muted); }
 
 .barWrap {
-  height: 6px;
-  background: var(--surface2);
+  height: 5px;
+  background: rgba(240, 217, 192, 0.6);
   position: relative;
   overflow: visible;
 }
@@ -99,7 +92,6 @@
   background: linear-gradient(90deg, var(--accent-purple), var(--accent));
   border-radius: 0 4px 4px 0;
   transition: width 0.5s ease;
-  position: relative;
 }
 
 .barLabel {
@@ -114,11 +106,6 @@
 }
 
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .diffPill {
-    display: none;
-  }
+  .hamburger { display: flex; }
+  .diffPill { display: none; }
 }

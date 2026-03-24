@@ -1,37 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Nunito:wght@400;600;700;800;900&display=swap");
 
-/* ─── Warm toy-store palette ──────────────────────────────────────
-   Inspired by POP MART / Hoppers collectible character style:
-   cream base, peachy surfaces, warm sandy borders, orange accents.
-──────────────────────────────────────────────────────────────── */
+/* ─── Warm toy-store palette ─────────────────────────────── */
 :root {
-  --bg:           #fef7ee;
-  --surface:      #ffffff;
-  --surface2:     #fff4e6;
-  --border:       #f0d9c0;
-  --shadow:       0 4px 16px rgba(160, 100, 40, 0.10);
-  --shadow-hover: 0 8px 28px rgba(160, 100, 40, 0.18);
-  --glow:         0 0 20px rgba(249, 115, 22, 0.18);
+  --bg:           #fef0d8;
+  --surface:      rgba(255, 255, 255, 0.70);
+  --surface2:     rgba(255, 248, 235, 0.80);
+  --border:       rgba(255, 255, 255, 0.75);
+  --border-solid: #f0d9c0;
+  --shadow:       0 4px 24px rgba(160, 100, 40, 0.10);
+  --shadow-hover: 0 10px 40px rgba(160, 100, 40, 0.18);
+  --blur:         blur(22px);
 
-  --accent:         #f97316;   /* warm orange  */
-  --accent-green:   #16a34a;   /* forest green */
-  --accent-purple:  #9333ea;   /* vivid purple */
+  --accent:         #f97316;
+  --accent-green:   #16a34a;
+  --accent-purple:  #9333ea;
 
-  --text:           #1c0d00;   /* deep warm brown-black */
-  --text-secondary: #7b4a20;   /* medium warm brown     */
-  --muted:          #b08060;   /* sandy muted           */
+  --text:           #1c0d00;
+  --text-secondary: #7b4a20;
+  --muted:          #b08060;
 
-  --easy:           #16a34a;
-  --easy-bg:        rgba(22, 163, 74,  0.10);
-  --medium:         #ea580c;
-  --medium-bg:      rgba(234, 88,  12, 0.10);
-  --hard:           #dc2626;
-  --hard-bg:        rgba(220, 38,  38, 0.10);
+  --easy:       #16a34a;
+  --easy-bg:    rgba(22, 163, 74,  0.10);
+  --medium:     #ea580c;
+  --medium-bg:  rgba(234, 88,  12, 0.10);
+  --hard:       #dc2626;
+  --hard-bg:    rgba(220, 38,  38, 0.10);
 }
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -46,7 +42,7 @@ body {
   position: relative;
 }
 
-/* Illustrated forest texture — very subtle warmth under the UI */
+/* Illustrated forest texture — gives the glass something to blur over */
 body::before {
   content: "";
   position: fixed;
@@ -55,7 +51,7 @@ body::before {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  opacity: 0.05;
+  opacity: 0.09;
   pointer-events: none;
   z-index: 0;
 }
@@ -66,9 +62,7 @@ body::before {
   z-index: 1;
 }
 
-.layout {
-  display: flex;
-}
+.layout { display: flex; }
 
 .main {
   flex: 1;
@@ -77,21 +71,17 @@ body::before {
   min-width: 0;
 }
 
-.sidebarOverlay {
-  display: none;
-}
+.sidebarOverlay { display: none; }
 
 @media (max-width: 768px) {
-  .main {
-    padding: 20px 16px;
-  }
+  .main { padding: 20px 16px; }
 
   .sidebarOverlay {
     display: block;
     position: fixed;
     inset: 0;
-    background: rgba(60, 30, 10, 0.45);
+    background: rgba(60, 30, 10, 0.40);
     z-index: 40;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(4px);
   }
 }
