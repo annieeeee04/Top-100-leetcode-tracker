@@ -20,63 +20,73 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 14px;
 }
 
+/* ── Character trading card ───────────────────────── */
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 18px 16px 16px;
+  border-top: 3px solid var(--cat-color, var(--accent-purple));
+  border-radius: 18px;
   cursor: pointer;
   text-align: left;
-  transition: all 0.18s ease;
+  transition: all 0.2s ease;
   width: 100%;
   display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  box-shadow: var(--shadow);
-  position: relative;
+  flex-direction: column;
   overflow: hidden;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--cat-color, var(--accent-purple));
-  opacity: 0;
-  transition: opacity 0.18s;
+  box-shadow: var(--shadow);
 }
 
 .card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px) scale(1.02);
   border-color: var(--cat-color, var(--accent-purple));
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6),
+              0 0 0 1px var(--cat-color, var(--accent-purple));
 }
 
-.card:hover::before {
-  opacity: 1;
-}
-
-.cardMascot {
-  font-size: 32px;
+/* ── Image section ─────────────────────────────────── */
+.cardImage {
+  width: 100%;
+  height: 130px;
+  overflow: hidden;
+  background: var(--surface2);
+  position: relative;
   flex-shrink: 0;
-  line-height: 1;
-  margin-top: 2px;
 }
 
+.charImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .charImg {
+  transform: scale(1.06);
+}
+
+.emojiFallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 52px;
+  background: var(--surface2);
+}
+
+/* ── Info section ─────────────────────────────────── */
 .cardBody {
+  padding: 12px 14px 14px;
   flex: 1;
-  min-width: 0;
 }
 
 .cardName {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
   color: var(--text);
   display: block;
@@ -85,15 +95,15 @@
 }
 
 .cardCount {
-  font-size: 11px;
+  font-size: 10.5px;
   color: var(--muted);
   font-family: "JetBrains Mono", monospace;
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   font-weight: 600;
 }
 
 .cardBar {
-  height: 5px;
+  height: 4px;
   background: var(--surface2);
   border-radius: 10px;
   overflow: hidden;
@@ -102,21 +112,17 @@
 .cardFill {
   height: 100%;
   border-radius: 10px;
-  transition: width 0.4s ease;
+  transition: width 0.5s ease;
 }
 
+/* ── Responsive ───────────────────────────────────── */
 @media (max-width: 480px) {
   .grid {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
 
-  .cardMascot {
-    font-size: 26px;
-  }
-
-  .card {
-    padding: 14px 12px 12px;
-    gap: 10px;
+  .cardImage {
+    height: 100px;
   }
 }

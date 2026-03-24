@@ -2,6 +2,48 @@
   margin-bottom: 24px;
 }
 
+/* Header = text left, character right */
+.headerTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.headerText {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Character image in header */
+.headerMascot {
+  flex-shrink: 0;
+  width: 110px;
+  height: 110px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid var(--border);
+  background: var(--surface2);
+  box-shadow: var(--shadow);
+}
+
+.mascotImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.mascotEmoji {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 52px;
+}
+
 .title {
   font-size: 22px;
   font-weight: 900;
@@ -12,11 +54,6 @@
   margin: 0 0 6px;
   flex-wrap: wrap;
   color: var(--text);
-}
-
-.mascot {
-  font-size: 28px;
-  line-height: 1;
 }
 
 .badge {
@@ -85,31 +122,12 @@
   background: rgba(167, 139, 250, 0.1);
 }
 
-.activeAll {
-  border-color: var(--accent-purple);
-  color: var(--accent-purple);
-  background: rgba(167, 139, 250, 0.15);
-}
+.activeAll    { border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(167, 139, 250, 0.15); }
+.activeEasy   { border-color: var(--easy);   color: var(--easy);   background: var(--easy-bg);   }
+.activeMedium { border-color: var(--medium); color: var(--medium); background: var(--medium-bg); }
+.activeHard   { border-color: var(--hard);   color: var(--hard);   background: var(--hard-bg);   }
 
-.activeEasy {
-  border-color: var(--easy);
-  color: var(--easy);
-  background: var(--easy-bg);
-}
-
-.activeMedium {
-  border-color: var(--medium);
-  color: var(--medium);
-  background: var(--medium-bg);
-}
-
-.activeHard {
-  border-color: var(--hard);
-  color: var(--hard);
-  background: var(--hard-bg);
-}
-
-/* Table wrapper for mobile scroll */
+/* Table */
 .tableWrap {
   overflow-x: auto;
   border-radius: 16px;
@@ -117,7 +135,6 @@
   box-shadow: var(--shadow);
 }
 
-/* Table */
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -144,13 +161,8 @@
   background: var(--surface);
 }
 
-.row:last-child {
-  border-bottom: none;
-}
-
-.row:hover {
-  background: var(--surface2);
-}
+.row:last-child { border-bottom: none; }
+.row:hover { background: var(--surface2); }
 
 .row td {
   padding: 11px 14px;
@@ -164,10 +176,7 @@
   opacity: 0.6;
 }
 
-.checkCell {
-  width: 44px;
-  text-align: center;
-}
+.checkCell { width: 44px; text-align: center; }
 
 .checkbox {
   width: 19px;
@@ -205,13 +214,9 @@
   transition: color 0.12s;
 }
 
-.nameCell a:hover {
-  color: var(--accent-purple);
-}
+.nameCell a:hover { color: var(--accent-purple); }
 
-.diffCell {
-  width: 90px;
-}
+.diffCell { width: 90px; }
 
 .diffTag {
   font-size: 11px;
@@ -222,24 +227,11 @@
   white-space: nowrap;
 }
 
-.easy {
-  color: var(--easy);
-  background: var(--easy-bg);
-}
+.easy   { color: var(--easy);   background: var(--easy-bg);   }
+.medium { color: var(--medium); background: var(--medium-bg); }
+.hard   { color: var(--hard);   background: var(--hard-bg);   }
 
-.medium {
-  color: var(--medium);
-  background: var(--medium-bg);
-}
-
-.hard {
-  color: var(--hard);
-  background: var(--hard-bg);
-}
-
-.tagCell {
-  width: 220px;
-}
+.tagCell { width: 220px; }
 
 .chip {
   font-size: 10px;
@@ -256,11 +248,11 @@
 }
 
 @media (max-width: 640px) {
-  .tagCell {
-    display: none;
-  }
+  .tagCell { display: none; }
+  .table { min-width: 340px; }
 
-  .table {
-    min-width: 340px;
+  .headerMascot {
+    width: 80px;
+    height: 80px;
   }
 }

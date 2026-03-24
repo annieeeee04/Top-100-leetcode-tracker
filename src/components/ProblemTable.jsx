@@ -2,6 +2,39 @@ import { useState } from "react";
 import { slugify } from "../data/problems";
 import styles from "./ProblemTable.module.css";
 
+import loafImg        from "../pics/loaf.png";
+import mabelImg       from "../pics/Mabel.png";
+import titusImg       from "../pics/Titus.png";
+import beaverImg      from "../pics/beaver.png";
+import lizardImg      from "../pics/lizard.png";
+import collectionImg  from "../pics/collection.png";
+import wholeFamilyImg from "../pics/whole_family.png";
+import birdKingImg    from "../pics/Bird King.png";
+import goldFishImg    from "../pics/goldFish.png";
+import frogImg        from "../pics/frog.png";
+import snakeImg       from "../pics/snake.png";
+import beerImg        from "../pics/beer.png";
+import sharkImg       from "../pics/shark.png";
+import jerryImg       from "../pics/Jerry.png";
+
+const MASCOT_IMGS = {
+  "array-hashing":  loafImg,
+  "two-pointers":   mabelImg,
+  "sliding-window": titusImg,
+  "stack":          beaverImg,
+  "binary-search":  lizardImg,
+  "linked-list":    collectionImg,
+  "trees":          wholeFamilyImg,
+  "tries":          birdKingImg,
+  "heap":           goldFishImg,
+  "backtracking":   frogImg,
+  "graphs":         snakeImg,
+  "dp-1d":          beerImg,
+  "dp-2d":          sharkImg,
+  "greedy":         jerryImg,
+  "math":           null,
+};
+
 const DIFF_FILTERS = ["All", "Easy", "Medium", "Hard"];
 
 export default function ProblemTable({ category, done, onToggle }) {
@@ -15,32 +48,43 @@ export default function ProblemTable({ category, done, onToggle }) {
       ? category.problems
       : category.problems.filter((p) => p.diff === filter);
 
+  const mascotSrc = MASCOT_IMGS[category.id];
+
   return (
     <div>
       {/* Header */}
       <div className={styles.header}>
-        <h1 className={styles.title}>
-          <span className={styles.mascot}>{category.mascot}</span>
-          {category.name}
-          <span
-            className={styles.badge}
-            style={{
-              background: `${category.color}25`,
-              color: category.color,
-            }}
-          >
-            {doneCount}/{category.problems.length}
-          </span>
-        </h1>
-        <p className={styles.desc}>{category.desc}</p>
-        <div className={styles.progressRow}>
-          <div className={styles.progBar}>
-            <div
-              className={styles.progFill}
-              style={{ width: `${pct}%`, background: category.color }}
-            />
+        <div className={styles.headerTop}>
+          <div className={styles.headerText}>
+            <h1 className={styles.title}>
+              {category.name}
+              <span
+                className={styles.badge}
+                style={{ background: `${category.color}25`, color: category.color }}
+              >
+                {doneCount}/{category.problems.length}
+              </span>
+            </h1>
+            <p className={styles.desc}>{category.desc}</p>
+            <div className={styles.progressRow}>
+              <div className={styles.progBar}>
+                <div
+                  className={styles.progFill}
+                  style={{ width: `${pct}%`, background: category.color }}
+                />
+              </div>
+              <span>{pct}% complete</span>
+            </div>
           </div>
-          <span>{pct}% complete</span>
+
+          {/* Character mascot in header */}
+          <div className={styles.headerMascot}>
+            {mascotSrc ? (
+              <img src={mascotSrc} alt={category.name} className={styles.mascotImg} />
+            ) : (
+              <span className={styles.mascotEmoji}>{category.mascot}</span>
+            )}
+          </div>
         </div>
       </div>
 
@@ -101,9 +145,7 @@ export default function ProblemTable({ category, done, onToggle }) {
                   </td>
                   <td className={styles.tagCell}>
                     {problem.tags.map((tag) => (
-                      <span key={tag} className={styles.chip}>
-                        {tag}
-                      </span>
+                      <span key={tag} className={styles.chip}>{tag}</span>
                     ))}
                   </td>
                 </tr>
