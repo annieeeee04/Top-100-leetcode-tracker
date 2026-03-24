@@ -1,25 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Nunito:wght@400;600;700;800;900&display=swap");
 
+/* ─── Warm toy-store palette ──────────────────────────────────────
+   Inspired by POP MART / Hoppers collectible character style:
+   cream base, peachy surfaces, warm sandy borders, orange accents.
+──────────────────────────────────────────────────────────────── */
 :root {
-  --bg: #0e0728;
-  --surface: #1a0f3d;
-  --surface2: #251654;
-  --border: #3b2480;
-  --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.6);
-  --glow: 0 0 20px rgba(167, 139, 250, 0.2);
-  --accent: #f97316;
-  --accent-green: #22c55e;
-  --accent-purple: #a78bfa;
-  --text: #f0e8ff;
-  --text-secondary: #c4b5fd;
-  --muted: #7c5cbf;
-  --easy: #22c55e;
-  --easy-bg: rgba(34, 197, 94, 0.15);
-  --medium: #f97316;
-  --medium-bg: rgba(249, 115, 22, 0.15);
-  --hard: #f43f5e;
-  --hard-bg: rgba(244, 63, 94, 0.15);
+  --bg:           #fef7ee;
+  --surface:      #ffffff;
+  --surface2:     #fff4e6;
+  --border:       #f0d9c0;
+  --shadow:       0 4px 16px rgba(160, 100, 40, 0.10);
+  --shadow-hover: 0 8px 28px rgba(160, 100, 40, 0.18);
+  --glow:         0 0 20px rgba(249, 115, 22, 0.18);
+
+  --accent:         #f97316;   /* warm orange  */
+  --accent-green:   #16a34a;   /* forest green */
+  --accent-purple:  #9333ea;   /* vivid purple */
+
+  --text:           #1c0d00;   /* deep warm brown-black */
+  --text-secondary: #7b4a20;   /* medium warm brown     */
+  --muted:          #b08060;   /* sandy muted           */
+
+  --easy:           #16a34a;
+  --easy-bg:        rgba(22, 163, 74,  0.10);
+  --medium:         #ea580c;
+  --medium-bg:      rgba(234, 88,  12, 0.10);
+  --hard:           #dc2626;
+  --hard-bg:        rgba(220, 38,  38, 0.10);
 }
 
 *,
@@ -39,16 +46,16 @@ body {
   position: relative;
 }
 
-/* Nature background — very subtle forest texture */
+/* Illustrated forest texture — very subtle warmth under the UI */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url('./pics/nature2.png');
+  background-image: url('./pics/nature1.png');
   background-size: cover;
-  background-position: center bottom;
+  background-position: center;
   background-attachment: fixed;
-  opacity: 0.07;
+  opacity: 0.05;
   pointer-events: none;
   z-index: 0;
 }
@@ -70,7 +77,6 @@ body::before {
   min-width: 0;
 }
 
-/* Mobile overlay backdrop */
 .sidebarOverlay {
   display: none;
 }
@@ -84,7 +90,7 @@ body::before {
     display: block;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(60, 30, 10, 0.45);
     z-index: 40;
     backdrop-filter: blur(2px);
   }

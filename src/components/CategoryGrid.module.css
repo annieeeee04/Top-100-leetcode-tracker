@@ -27,8 +27,8 @@
 /* ── Character trading card ───────────────────────── */
 .card {
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-top: 3px solid var(--cat-color, var(--accent-purple));
+  border: 1.5px solid var(--border);
+  border-top: 3px solid var(--cat-color, var(--accent));
   border-radius: 18px;
   cursor: pointer;
   text-align: left;
@@ -42,9 +42,8 @@
 
 .card:hover {
   transform: translateY(-4px) scale(1.02);
-  border-color: var(--cat-color, var(--accent-purple));
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6),
-              0 0 0 1px var(--cat-color, var(--accent-purple));
+  border-color: var(--cat-color, var(--accent));
+  box-shadow: var(--shadow-hover);
 }
 
 /* ── Image section ─────────────────────────────────── */
@@ -104,7 +103,7 @@
 
 .cardBar {
   height: 4px;
-  background: var(--surface2);
+  background: var(--border);
   border-radius: 10px;
   overflow: hidden;
 }

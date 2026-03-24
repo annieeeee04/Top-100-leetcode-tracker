@@ -2,7 +2,6 @@
   margin-bottom: 24px;
 }
 
-/* Header = text left, character right */
 .headerTop {
   display: flex;
   align-items: flex-start;
@@ -15,14 +14,13 @@
   min-width: 0;
 }
 
-/* Character image in header */
 .headerMascot {
   flex-shrink: 0;
   width: 110px;
   height: 110px;
   border-radius: 16px;
   overflow: hidden;
-  border: 2px solid var(--border);
+  border: 1.5px solid var(--border);
   background: var(--surface2);
   box-shadow: var(--shadow);
 }
@@ -84,7 +82,7 @@
 .progBar {
   width: 200px;
   height: 6px;
-  background: var(--surface2);
+  background: var(--border);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -106,7 +104,7 @@
 .filterBtn {
   padding: 6px 16px;
   border-radius: 20px;
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   background: var(--surface);
   color: var(--muted);
   font-family: "Nunito", sans-serif;
@@ -119,10 +117,10 @@
 .filterBtn:hover {
   border-color: var(--accent-purple);
   color: var(--accent-purple);
-  background: rgba(167, 139, 250, 0.1);
+  background: rgba(147, 51, 234, 0.06);
 }
 
-.activeAll    { border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(167, 139, 250, 0.15); }
+.activeAll    { border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(147, 51, 234, 0.08); }
 .activeEasy   { border-color: var(--easy);   color: var(--easy);   background: var(--easy-bg);   }
 .activeMedium { border-color: var(--medium); color: var(--medium); background: var(--medium-bg); }
 .activeHard   { border-color: var(--hard);   color: var(--hard);   background: var(--hard-bg);   }
@@ -131,7 +129,7 @@
 .tableWrap {
   overflow-x: auto;
   border-radius: 16px;
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   box-shadow: var(--shadow);
 }
 
@@ -148,21 +146,21 @@
   text-transform: uppercase;
   color: var(--muted);
   padding: 10px 14px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1.5px solid var(--border);
   font-weight: 800;
-  background: var(--surface);
+  background: var(--surface2);
   white-space: nowrap;
 }
 
 .row {
-  border-bottom: 1px solid rgba(59, 36, 128, 0.5);
+  border-bottom: 1px solid var(--border);
   transition: background 0.12s;
   cursor: pointer;
   background: var(--surface);
 }
 
 .row:last-child { border-bottom: none; }
-.row:hover { background: var(--surface2); }
+.row:hover      { background: var(--surface2); }
 
 .row td {
   padding: 11px 14px;
@@ -173,7 +171,7 @@
 .doneRow .nameCell a {
   color: var(--muted);
   text-decoration: line-through;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .checkCell { width: 44px; text-align: center; }
@@ -196,7 +194,7 @@
   background: var(--accent-purple);
   border-color: var(--accent-purple);
   color: #fff;
-  box-shadow: 0 0 10px rgba(167, 139, 250, 0.4);
+  box-shadow: 0 0 8px rgba(147, 51, 234, 0.3);
 }
 
 .numCell {
@@ -248,11 +246,7 @@
 }
 
 @media (max-width: 640px) {
-  .tagCell { display: none; }
-  .table { min-width: 340px; }
-
-  .headerMascot {
-    width: 80px;
-    height: 80px;
-  }
+  .tagCell    { display: none; }
+  .table      { min-width: 340px; }
+  .headerMascot { width: 80px; height: 80px; }
 }

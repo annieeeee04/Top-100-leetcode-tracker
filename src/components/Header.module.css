@@ -10,7 +10,7 @@
   position: sticky;
   top: 0;
   z-index: 30;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 12px rgba(160, 100, 40, 0.12);
 }
 
 .left {
@@ -96,7 +96,7 @@
 
 .barFill {
   height: 100%;
-  background: linear-gradient(90deg, #7c3aed, var(--accent));
+  background: linear-gradient(90deg, var(--accent-purple), var(--accent));
   border-radius: 0 4px 4px 0;
   transition: width 0.5s ease;
   position: relative;
